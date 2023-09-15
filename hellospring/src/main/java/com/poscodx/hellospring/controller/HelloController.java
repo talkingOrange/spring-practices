@@ -1,5 +1,10 @@
 package com.poscodx.hellospring.controller;
 
+import java.io.Writer;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,9 +50,10 @@ public class HelloController {
 		return "안녕 스프링씨";
 	}
 	
-	@RequestMapping("/hello6")
-	public String hello6() {
-		return "redirect:/hello";
+	@RequestMapping("/hello7")
+	public void hello7(HttpServletRequest request, HttpServletResponse resonse, Writer out) throws Exception{
+		String name = request.getParameter("n");
+		out.write("hello " + name );
 	}
 
 }
