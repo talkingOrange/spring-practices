@@ -5,10 +5,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
-public class MainController {
-
+public class MainController {	
 	@ResponseBody
-	@RequestMapping({"/", "/main", "/board/write"} )
+	@RequestMapping({"/", "/main", "/a/b/c/d"})
 	public String main() {
 		return "MainController.main()";
 	}
